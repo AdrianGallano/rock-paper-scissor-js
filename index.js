@@ -28,7 +28,6 @@ const computerPlay = () => {
 };
 
 const playerPlay = () => {
-	let userChoice = prompt("please pick a choice: ");
 	return userChoice[0].toUpperCase() + userChoice.slice(1).toLowerCase();
 };
 
