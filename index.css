@@ -6,8 +6,8 @@
 }
 
 body{
-    background-color: #01070a;
-    color: #f2f2f2;
+    background-color: black;
+    color: white;
     font-family: 'Fira Sans', sans-serif;
 }
 /* LAYOUT */
@@ -47,6 +47,11 @@ body{
     font-size: 2rem;
 }
 
+/* Timer */
+.timer{
+    align-self: center;
+}
+
 /* GAME CONTAINER */
 .game-container{
     display: flex;
@@ -61,7 +66,7 @@ body{
 
 .playground{
     flex: 2;
-    background-color: #f2f2f2;
+    background-color: white;
     height: 100%;
 }
 
@@ -85,9 +90,7 @@ body{
     transform: scaleX(-100%);
 }
 
-.good-cat{
-    width: 60%;
-}
+
 
 .dialog{
     height: 15vh;
@@ -101,12 +104,14 @@ body{
 button{
     height: 15vh;
     background-color: #4d4848e9;
-    border-color: grey;
+    border-color: #797878;
+    border-radius: 10px;
     padding: 1em;
+    transition: 0.3s;
 }
 
 button:hover{
-    background-color: #f2f2f2;
+    transform: translateY(-10%);
 }
 
 button img{
