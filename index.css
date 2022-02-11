@@ -1,126 +1,92 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&display=swap');
-
-*{
-    box-sizing: border-box;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+:root{
+    --color-1: #192a32;
+    --color-2: #5bc4bf;
+    --color-3: #efb238;
+    --color-4: #a6bcc6;
+    --color-5: #11212a;
+    --color-6: #1f3540;
 }
 
 body{
-    background-color: black;
-    color: white;
-    font-family: 'Fira Sans', sans-serif;
+    background-color: var(--color-1);
+    color: var(--color-2);
+    font-family: 'Roboto', sans-serif;
 }
-/* LAYOUT */
-.game{
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
     display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-}
-
-.board{
-    display: flex;
-    justify-content: space-between;
-    padding: 1em 1em 0 1em;
-}
-
-.board div{
-    flex: 1;
-}
-
-.player-score, 
-.enemy-score{
-    font-weight: 500;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-.player-score{
-    align-items: flex-start;
-}
-
-.round{
-    display: flex;
+    align-items: center;
     justify-content: center;
-    font-weight: 700;
-    font-size: 2rem;
+    height: 100vh;
 }
 
-/* Timer */
-.timer{
-    align-self: center;
-}
-
-/* GAME CONTAINER */
 .game-container{
     display: flex;
-    justify-content: space-between;
-    height: 85vh;
-    gap: 2em;
-    padding: 1em;
-    margin-bottom: 1em;
-    align-items: center;
-}
-
-
-.playground{
-    flex: 2;
-    background-color: white;
-    height: 100%;
-}
-
-
-.player, 
-.enemy{
-    display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 1em;
+    height: 50vh;
+    
+}
+
+.scoreboard{
+    display: flex;
+    justify-content: space-around;
+    gap: 1em;
+
+}
+
+.win,
+.lose,
+.ties{
+    text-align: center;
     flex: 1;
-    height: 100%;
-
-}
-
-.good-cat,
-.bad-cat{
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-    flex: 1;
-    transform: scaleX(-100%);
-}
-
-
-
-.dialog{
-    height: 15vh;
-    width: 100%;
-    background-color: white;
-    color: black;
-    padding: 1em;
-}
-
-/* BUTTON CUSTOMIZATION */
-button{
-    height: 15vh;
-    background-color: #4d4848e9;
-    border-color: #797878;
+    font-weight: 900;
     border-radius: 10px;
-    padding: 1em;
-    transition: 0.3s;
+    padding: .5em;
+    color: #192a32;
 }
 
-button:hover{
-    transform: translateY(-10%);
+.win{
+    background-color: var(--color-2);
 }
 
-button img{
-    position: relative;
-    height: 100%;
+.ties{
+    background-color: var(--color-4);
 }
+
+.lose{
+    background-color: var(--color-3);
+}
+
+
+p{
+    font-size: 10px;
+    font-weight: 500;
+}
+
 
 .button-container{
     display: flex;
-    justify-content: center;
+    height: auto;
     gap: 1em;
+}
+
+.button-container button{
+    background-color: var(--color-6);
+    border: none;
+    border-bottom: 5px solid var(--color-5);
+    border-radius: 10px;
+    padding: .5em .7em;
+}
+
+.button-container img{
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
 }

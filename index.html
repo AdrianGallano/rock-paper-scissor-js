@@ -10,41 +10,27 @@
 </head>
 <body>
     <main>
-        <div class="game">
-            <div class="board">
-                <div class="player-score">
-                    <div>
-                        <p>PLAYER SCORE</p>
-                        <p style="text-align: center;"></p>
-                    </div>
-                </div>
-                <div class="round">
-                    ROUND 1
-                </div>
-                <div class="enemy-score">
-                    <div>
-                        <p>ENEMY SCORE</p>
-                        <p style="text-align: center;"></p>
-                    </div>
-                </div>
+        <div class="game-container">
+            <div class="round">
+                Round 1
             </div>
-            <p class="timer"></p>
-            <div class="game-container">
-                <div class="player">
-                    <img src="./images/goodcat.png" alt="good cat" class="good-cat">
-                    <div class="button-container">
-                        <button class="game-choice" key-choice="Rock"><img src="images/stone.png" alt="rock"></button>
-                        <button class="game-choice" key-choice="Paper"><img src="images/new-document.png" alt="paper"></button>
-                        <button class="game-choice" key-choice="Scissor"><img src="images/scissors.png" alt="scissor"></button>
-                    </div>
+            <div class="button-container">
+                <button><img src="./images/stone.png" alt="rock"></button>
+                <button><img src="./images/scissors.png" alt="paper"></button>
+                <button><img src="./images/new-document.png" alt="scissor"></button>
+            </div>
+            <div class="scoreboard">
+                <div class="win">
+                    <p>WIN</p>
+                    <span class="score">0</span>
                 </div>
-                <div class="playground">
+                <div class="ties">
+                    <p>TIES</p>
+                    <span class="score">0</span>
                 </div>
-                <div class="enemy">
-                    <img src="./images/seriouscat.png" alt="beluga" class="bad-cat">
-                    <div class="dialog">
-                        hello
-                    </div>
+                <div class="lose">
+                    <p>LOSE</p>
+                    <span class="score">0</span>
                 </div>
             </div>
         </div>
