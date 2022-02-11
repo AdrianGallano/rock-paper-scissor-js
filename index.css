@@ -1,42 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500&display=swap');
+
 *{
     box-sizing: border-box;
     margin: 0;
 }
 
 body{
-    background-image: url("images/bat-cave-budget-version.gif");
-    background-size: cover;
-    }
-
-main{
+    background-color: #01070a;
+    color: #f2f2f2;
+    font-family: 'Fira Sans', sans-serif;
+}
+/* LAYOUT */
+.game{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     height: 100vh;
-    padding: 2em;
+    justify-content: space-between;
+}
+
+.board{
+    display: flex;
+    justify-content: space-between;
+    padding: 1em 1em 0 1em;
+}
+
+.board div{
+    flex: 1;
+}
+
+.player-score, 
+.enemy-score{
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.player-score{
+    align-items: flex-start;
+}
+
+.round{
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* GAME CONTAINER */
+.game-container{
+    display: flex;
+    justify-content: space-between;
+    height: 85vh;
+    gap: 2em;
+    padding: 1em;
+    margin-bottom: 1em;
     align-items: center;
 }
 
-.robot{
-    height: 20vh;
+
+.playground{
+    flex: 2;
+    background-color: #f2f2f2;
+    height: 100%;
 }
 
-.button-container{
+
+.player, 
+.enemy{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    height: 100%;
 
-    gap: 1em;
 }
 
+.good-cat,
+.bad-cat{
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    flex: 1;
+    transform: scaleX(-100%);
+}
+
+.good-cat{
+    width: 60%;
+}
+
+.dialog{
+    height: 15vh;
+    width: 100%;
+    background-color: white;
+    color: black;
+    padding: 1em;
+}
+
+/* BUTTON CUSTOMIZATION */
 button{
     height: 15vh;
-    background-color: #f2f2f2;
+    background-color: #4d4848e9;
     border-color: grey;
     padding: 1em;
 }
 
 button:hover{
-    background-color: #4d4848e9;
+    background-color: #f2f2f2;
 }
 
 button img{
@@ -44,3 +114,8 @@ button img{
     height: 100%;
 }
 
+.button-container{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}

@@ -10,11 +10,43 @@
 </head>
 <body>
     <main>
-        <div><img src="images/robot-assistant.png" alt="evil-robot" class="robot"></div>
-        <div class="button-container">
-            <button><img src="images/stone.png" alt="rock"></button>
-            <button><img src="images/new-document.png" alt="paper"></button>
-            <button><img src="images/scissors.png" alt="scissor"></button>
+        <div class="game">
+            <div class="board">
+                <div class="player-score">
+                    <div>
+                        <p>GOOD CATTO SCORE</p>
+                        <p style="text-align: center;">1</p>
+                    </div>
+                </div>
+                <div class="round">
+                    ROUND 1
+                </div>
+                <div class="enemy-score">
+                    <div>
+                        <p>BAD CATTO SCORE</p>
+                        <p style="text-align: center;">2</p>
+                    </div>
+                </div>
+            </div>
+            <div class="game-container">
+
+                <div class="player">
+                    <img src="./images/goodcatto.png" alt="good cat" class="good-cat">
+                    <div class="button-container">
+                        <button class="game-choice" key-choice="Rock"><img src="images/stone.png" alt="rock"></button>
+                        <button class="game-choice" key-choice="Paper"><img src="images/new-document.png" alt="paper"></button>
+                        <button class="game-choice" key-choice="Scissor"><img src="images/scissors.png" alt="scissor"></button>
+                    </div>
+                </div>
+                <div class="playground">
+                </div>
+                <div class="enemy">
+                    <img src="./images/seriouscat.png" alt="beluga" class="bad-cat">
+                    <div class="dialog">
+                        hello
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </body>
