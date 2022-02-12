@@ -6,6 +6,7 @@
     --color-4: #a6bcc6;
     --color-5: #11212a;
     --color-6: #1f3540;
+    --color-7: #1a2c35;
 }
 
 body{
@@ -26,14 +27,105 @@ main{
     height: 100vh;
 }
 
+/* CONTAINER */
 .game-container{
     display: flex;
     flex-direction: column;
     gap: 1em;
     height: 50vh;
-    
+    width: auto;
+}
+/* HEADER */
+.header{
+    display: flex;
+    height: 10%;
+    width: 100%;
+    gap: 1em;
 }
 
+.logo{
+    display: flex;
+    flex: 1;
+    background-color: var(--color-6);
+}
+
+.round,
+.logo{
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.round,
+.logo{
+    background-color: var(--color-6);
+    font-weight: 900;
+    color: var(--color-4);
+    border-radius: 10px;
+    border-bottom: 5px solid var(--color-5);
+}
+
+.restart{
+    flex: 1;
+}
+
+.round{
+    font-size: .9em;
+}
+
+.round-counter{
+    color: var(--color-3);
+}
+
+.logo img{
+    height: 80%;
+    width: auto;
+}
+
+/* PLAYGROUND */
+.playground{
+    flex: 1;
+    background-color: var(--color-6);
+    border-radius: 10px;
+    border-bottom: 5px solid var(--color-5);
+}
+
+
+/* BUTTONS */
+.button-container{
+    display: flex;
+    height: auto;
+    gap: 1em;
+}
+
+.button-container button{
+    background-color: var(--color-6);
+    border: none;
+    border-bottom: 5px solid var(--color-5);
+    border-radius: 10px;
+    padding: .5em .7em;
+    transition-timing-function: ease-out;
+    transition: 90ms;
+}
+
+.button-container button:hover{
+    border-bottom: 3px solid var(--color-5);
+    background-color: var(--color-7);
+}
+
+.button-container button:active{
+    background-color: var(--color-2);
+    border-bottom: 3px solid var(--color-3);
+}
+
+.button-container img{
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+/* SCOREBOARD */
 .scoreboard{
     display: flex;
     justify-content: space-around;
@@ -48,8 +140,9 @@ main{
     flex: 1;
     font-weight: 900;
     border-radius: 10px;
-    padding: .5em;
+    padding: .3em 1em;
     color: #192a32;
+    border-bottom: 5px solid var(--color-5);
 }
 
 .win{
@@ -68,25 +161,4 @@ main{
 p{
     font-size: 10px;
     font-weight: 500;
-}
-
-
-.button-container{
-    display: flex;
-    height: auto;
-    gap: 1em;
-}
-
-.button-container button{
-    background-color: var(--color-6);
-    border: none;
-    border-bottom: 5px solid var(--color-5);
-    border-radius: 10px;
-    padding: .5em .7em;
-}
-
-.button-container img{
-    height: 60px;
-    width: 60px;
-    object-fit: contain;
 }
