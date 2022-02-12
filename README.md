@@ -8,3 +8,5 @@
 <br>
 <p>the target of project is to solidy the knowledge about dom manipulation using javascript</p>
 <img src="./images/website.png"> 
+<h2>prompt state</h2>
+<img src="./images/state.png"> 
