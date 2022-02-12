@@ -6,7 +6,10 @@ let rounds = 1;
 const choices = document.getElementsByClassName("game-choice") 
 const scores = document.getElementsByClassName("score")
 const roundCounter = document.querySelector(".round-counter")
-
+const popup  = document.querySelector(".pop-up")
+const popupMessage = document.querySelector(".message")
+const humanityOrComputer = document.querySelector('.hum-or-com')
+const playAgain = document.querySelector(".play-again")
 
 let computerChoose = () => {
 	let choices = ["rock", "paper", "scissor"]
@@ -38,19 +41,46 @@ let restartGame = () => {
 }
 
 let checkGame = () => {
-	if(rounds >	 5){
-		return true
+	if(wins == 5){
+		return "YOU WON!"
+	}else if(lost == 5){
+		return "YOU LOST!"
+	}
+	return false
+}
+
+let changePopupState = (result, humOrCom) => {
+	if(popup.style.display == "flex"){
+		popup.style.display = "none"
+	}else{
+		popup.style.display = "flex"
+		popupMessage.textContent = result
+		humanityOrComputer.textContent = humOrCom
 	}
 }
 
 //game 
-Array.from(choices).forEach(choice=>choice.addEventListener("click", (e)=>{
-	round(choice.getAttribute("key-choice"), computerChoose)
-	scores[0].textContent = wins
-	scores[1].textContent = lost
-	scores[2].textContent = ties
-	roundCounter.textContent = rounds
-	checkGame()
-}))
+const game = () => {
+	Array.from(choices).forEach(choice=>choice.addEventListener("click", (e)=>{
+		round(choice.getAttribute("key-choice"), computerChoose)
 
+		let result = checkGame()
+		if(result){
+			restartGame()
+			if(result == "YOU WON!"){
+				changePopupState(result, "HUMANITY")
+			}else{
+				changePopupState(result, "COMPUTER")
+			}
+		}
+
+		scores[0].textContent = wins
+		scores[1].textContent = ties
+		scores[2].textContent = lost
+		roundCounter.textContent = rounds
+	}))
+
+	playAgain.addEventListener("click", changePopupState)
+}
+game()
 
