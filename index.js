@@ -74,11 +74,10 @@ const displayImage = (player, chosen) => {
 	}
 }
 
-
-//game 
 const game = () => {
 	Array.from(choices).forEach(choice=>choice.addEventListener("click", (e)=>{
 		round(choice.getAttribute("key-choice"), computerChoose)
+
 		let result = checkGame()
 		if(result){
 			restartGame()
