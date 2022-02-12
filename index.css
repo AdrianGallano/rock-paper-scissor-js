@@ -85,17 +85,50 @@ main{
 
 /* PLAYGROUND */
 .playground{
+    display: flex;
+    padding: 1em;
     flex: 1;
+    height: 30%;
+    width: 100%;
     background-color: var(--color-6);
     border-radius: 10px;
     border-bottom: 5px solid var(--color-5);
 }
 
+.playcontent{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.playcontent img{
+    display: none;
+    height: 100%;
+    width: auto;
+}
+
+.vs{
+    font-weight: 900;
+    color: var(--color-3);
+}
+
+.playimage-container{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex: 1;
+
+}
 
 /* BUTTONS */
 .button-container{
     display: flex;
     height: auto;
+    align-items: center;
+    justify-content: space-evenly;
     gap: 1em;
 }
 
@@ -157,12 +190,10 @@ main{
     background-color: var(--color-3);
 }
 
-
 p{
     font-size: 10px;
     font-weight: 500;
 }
-
 
 /* pop up */
 .pop-up{

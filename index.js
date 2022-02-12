@@ -10,15 +10,18 @@ const popup  = document.querySelector(".pop-up")
 const popupMessage = document.querySelector(".message")
 const humanityOrComputer = document.querySelector('.hum-or-com')
 const playAgain = document.querySelector(".play-again")
+const playgroundImage = document.querySelectorAll(".playimage-container img") 
 
-let computerChoose = () => {
+const computerChoose = () => {
 	let choices = ["rock", "paper", "scissor"]
 	let randNum = Math.floor(Math.random() * 3)
 	return choices[randNum]
 }
 
-let round = (playerChoice, computerChoice) => {
+const round = (playerChoice, computerChoice) => {
 	let computerChosen = computerChoice()
+	displayImage(playgroundImage[0],playerChoice)
+	displayImage(playgroundImage[1],computerChosen)
 	if(playerChoice == "rock" && computerChosen == "scissor" 
 	|| playerChoice == "scissor" && computerChosen == "paper" 
 	|| playerChoice == "paper" && computerChosen == "rock"){
@@ -33,14 +36,14 @@ let round = (playerChoice, computerChoice) => {
 	}
 }
 
-let restartGame = () => {
+const restartGame = () => {
 	rounds = 1;
 	wins = 0;
 	lost = 0;
 	ties = 0;
 }
 
-let checkGame = () => {
+const checkGame = () => {
 	if(wins == 5){
 		return "YOU WON!"
 	}else if(lost == 5){
@@ -49,9 +52,10 @@ let checkGame = () => {
 	return false
 }
 
-let changePopupState = (result, humOrCom) => {
+const changePopupState = (result, humOrCom) => {
 	if(popup.style.display == "flex"){
 		popup.style.display = "none"
+		playgroundImage.forEach(image => image.style.display = "none")
 	}else{
 		popup.style.display = "flex"
 		popupMessage.textContent = result
@@ -59,11 +63,22 @@ let changePopupState = (result, humOrCom) => {
 	}
 }
 
+const displayImage = (player, chosen) => {
+	player.style.display = "block"
+	if(chosen == "rock"){
+		player.setAttribute("src", "./images/stone.png")
+	}else if(chosen == "paper"){
+		player.setAttribute("src", "./images/new-document.png")
+	}else{
+		player.setAttribute("src", "./images/scissors.png")
+	}
+}
+
+
 //game 
 const game = () => {
 	Array.from(choices).forEach(choice=>choice.addEventListener("click", (e)=>{
 		round(choice.getAttribute("key-choice"), computerChoose)
-
 		let result = checkGame()
 		if(result){
 			restartGame()
