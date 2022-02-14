@@ -79,7 +79,7 @@ main{
 }
 
 .logo img{
-    height: 80%;
+    height: 60%;
     width: auto;
 }
 
@@ -106,8 +106,9 @@ main{
 
 .playcontent img{
     display: none;
+    object-fit: contain;
     height: 100%;
-    width: auto;
+    width: 100%;    
 }
 
 .vs{
