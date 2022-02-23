@@ -1,4 +1,4 @@
-# odin-rock-paper-scissor
+# rock-paper-scissor-js
 <h1>A PROJECT FROM ODIN</h1>
 <hr>
 <ul>
